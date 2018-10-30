@@ -1,0 +1,121 @@
+% interactapasample.tex
+% v1.05 - August 2017
+
+\documentclass[]{interact}
+
+\usepackage{fontenc}
+\usepackage{fontspec}
+\setmainfont{CMU Serif}
+
+\usepackage{epstopdf}% To incorporate .eps illustrations using PDFLaTeX, etc.
+\usepackage[caption=false]{subfig}% Support for small, `sub' figures and tables
+
+\usepackage{rotfloat}
+
+$if(figureslast)$
+\usepackage[nolists,tablesfirst]{endfloat}% To `separate' figures and tables from text if required
+\DeclareDelayedFloatFlavor{sidewaysfigure}{figure}
+\renewcommand{\efloatseparator}{\mbox{}}
+$endif$
+$if(doublespacing)$
+\usepackage[doublespacing]{setspace}% To produce a `double spaced' document if required
+\setlength\parindent{24pt}% To increase paragraph indentation when line spacing is doubled
+$endif$
+
+$if(natbib)$
+\usepackage[longnamesfirst,sort]{natbib}% Citation support using natbib.sty
+\bibpunct[, ]{(}{)}{;}{a}{,}{,}% Citation support using natbib.sty
+\renewcommand\bibfont{\fontsize{10}{12}\selectfont}% To set the list of references in 10 point font using natbib.sty
+$endif$
+$if(biblatex)$
+\usepackage[style=apa,backend=biber,language=british]{biblatex}
+$if(bibliography)$
+\addbibresource{$bibliography$}
+$endif$
+$endif$
+
+\theoremstyle{plain}% Theorem-like structures provided by amsthm.sty
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\newtheorem{notation}{Notation}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% Pandoc header
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={$author-meta$},
+            pdftitle={$title-meta$},
+            colorlinks=false,
+            urlcolor=$if(urlcolor)$$urlcolor$$else$black$endif$,
+            linkcolor=$if(linkcolor)$$linkcolor$$else$black$endif$,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+
+\begin{document}
+
+\articletype{$article-type$}% Specify the article type or omit as appropriate
+
+\title{$title$}
+
+\author{
+  \name{$for(author)$
+  $author.name$\textsuperscript{$author.affiliationcode$}$if(author.footnote)$\thanks{$author.footnote$}$endif$$sep$; $endfor$}
+  \affil{$for(affiliation)$\textsuperscript{$affiliation.code$}$affiliation.address$$sep$; $endfor$}
+}
+
+\maketitle
+
+\begin{abstract}
+  $abstract$
+\end{abstract}
+
+ $if(keywords)$ \begin{keywords} $for(keywords)$$keywords$$sep$; $endfor$\end{keywords}$endif$
+
+
+$body$
+
+$if(natbib)$
+$if(biblio-files)$
+$if(biblio-title)$
+$if(book-class)$
+\renewcommand\bibname{$biblio-title$}
+$else$
+\renewcommand\refname{$biblio-title$}
+$endif$
+$endif$
+\bibliography{$biblio-files$}
+
+$endif$
+$endif$
+$if(biblatex)$
+\printbibliography$if(biblio-title)$[title=$biblio-title$]$endif$
+
+$endif$
+$for(include-after)$
+$include-after$
+
+$endfor$
+
+\end{document}

@@ -1,0 +1,34 @@
+---
+title: Article Title
+author:
+  - name: A. N. Author.
+    affiliationcode: a
+    footnote: "CONTACT A. N. Author. Email: latex.helpdesk@tandf.co.uk"
+  - name: John Smith
+    affiliationcode: b
+affiliation:
+  - code: a
+    address: Taylor & Francis, 4 Park Square, Milton Park, Abingdon, UK
+  - code: b
+    address: Institut für Informatik, Albert-Ludwigs-Universität, Freiburg, Germany
+abstract: |
+  This template is for authors who are preparing a manuscript for a Taylor \& Francis journal using the \LaTeX\ document preparation system and the \texttt{interact} class file, which is available via selected journals' home pages on the Taylor \& Francis website.
+
+keywords:
+  - Keyword1
+  - Keyword the second
+  
+doublespacing: yes
+figureslast: yes
+bibliography: mybibfile.bib
+output: rticles::interactapa_article
+---
+
+
+# Introduction
+
+Body content goes here
+
+## Double spacing
+
+# References {-}

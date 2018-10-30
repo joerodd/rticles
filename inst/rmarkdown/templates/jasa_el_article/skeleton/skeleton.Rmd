@@ -1,0 +1,41 @@
+---
+title: Sample JASA-EL Article
+author:
+  - name: Author One
+    email: author.one@someplace.edu
+    affiliation: Department1,  University1, City, State ZipCode, Country
+    corresponding: yes
+  - name: author.two@someplace.edu
+    affiliation: University2, City, State, Zipcode, Country
+    altaffiliation: University3, City, State, Zipcode, Country
+    
+    
+abstract: |
+  <Put your abstract here. Abstracts are limited to 100 words for
+  JASA-EL articles.>
+  
+acknowledgements: |
+  This research was supported by  ...
+
+
+bibliography: mybibfile.bib
+output: rticles::jasa_el_article
+---
+
+```{r setup, echo=F}
+library(xtable)
+library(knitr)
+system2("cp",args=c("/Users/joerod/Google\\ Drive/bibliography/Papers/Bibliography.bib","mybibfile.bib"))
+options(xtable.latex.environments= c("center","ruledtabular"))
+options(xtable.hline.after = c(0))
+
+```
+
+# Introduction
+
+Body content goes here
+
+
+
+
+

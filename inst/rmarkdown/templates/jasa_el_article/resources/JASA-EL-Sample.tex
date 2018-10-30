@@ -1,0 +1,742 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	JASA-EL LaTeX Sample File
+%
+%  Beginner Latex users should refer to their favorite online documentation
+%  here is one from the TeX Users Group 
+%	https://www.tug.org/twg/mactex/tutorials/ltxprimer-1.0.pdf
+%
+%  Useful FAQ from  https://journals.aps.org/revtex/revtex-faq
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%% JASA-EL without options %%%%%%%%%%%%%%%%%%%%%%%
+%% For manuscript, 12pt, one column style, line numbers default
+
+\documentclass{JASA-EL}
+
+%%%%% JASA-EL Options %%%%%
+%% 
+%% Remember only one documentclass command may  be used, so
+%% if you use one of these document class commands with options,
+%% remember to comment out the other instances of \documentclass
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% For alternate affiliation, use \altaffilition{}:
+%% \altaffiliation{Also at: Another University, City, State, Zipcode, Country}
+%% If appropriate, enter this command immediately after the \affiliation{} command.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% The default option produces all authors, all affiliations,
+%% then all email addresses, ie,
+
+%%
+% author one, author two, author three, author four, author five
+%%
+% affiliation,  affiliation, affiliation
+%%
+% email for author one, email for author two, email for author three,
+% email for author four, email for author five
+%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Author Affiliation Option 
+% \documentclass[authaffil]{JASA-EL}
+
+% authaffil option will produce all email addresses for previously
+% mentioned authors immediately after affiliation; ie,
+
+% author one, author two, author three
+% affiliation
+% email for author one, email for author two, email for author three
+% 
+% author four
+% affiliation
+% email
+% 
+% author five
+% affiliation
+% email for author five
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Reference Options:
+
+%% Remember to run LaTeX on your file, then BibTeX, then LaTeX in
+%% order to get the correct format.
+
+%% Default is Author-Year style.
+% \documentclass{JASA-EL}
+
+%% NumberedRefs Option
+%% The NumberedRefs option produces numbered bibliography and citations.
+% \documentclass[NumberedRefs]{JASA-EL}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Line numbers, on by default. Here's how to turn them off:
+%% \documentclass[turnofflinenumbers]{JASA-EL}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Track Changes %%
+%% The track changes option allows you to mark changes
+%% and will produce a list of changes, their line number
+%% and page number at the end of the article.
+
+%%  Use this option for Track Changes:
+% \documentclass[trackchanges]{JASA-EL}
+
+\begin{document}
+
+%% Version in square brackets will appear at top right of all pages except title page:
+\title[JASA-EL/Sample JASA-EL Article]{Sample JASA-EL Article}
+\author{Author One}
+\email{author.one@someplace.edu}
+\author{Author Two}
+\email{author.two@someplace.edu}
+\author{Author Three}
+\email{author.three@someplace.edu}
+\affiliation{Department1,  University1, City, State ZipCode,
+Country}
+\altaffiliation{Also at: Another University,
+City, State, ZipCode, Country}
+\author{Author Four}
+\email{author.four@someplace.edu}
+\correspondingauthor
+\affiliation{Department2,  University2, City, State ZipCode, Country}
+\author{Author Five}			
+\email{author.five@someplace.edu}
+\affiliation{Department3,  University3, City, State ZipCode, Country}
+
+\date{\today} 
+\preprint{Author, JASA-EL}  %if you want want this message to appear in upper left corner of title page
+
+\begin{abstract}
+Put your abstract here. Abstracts are limited to 100 words for
+JASA-EL
+articles. Please no
+personal pronouns, also please do not use the words ``new'' and/or
+``novel'' in the abstract. An article usually includes an abstract, a
+concise summary of the work covered at length in the main body of the
+article.     
+\end{abstract}
+
+%% pacs numbers not used
+
+\maketitle
+
+%  End of title page for Preprint option --------------------------------- %
+
+\section{\label{sec:1} Introduction section}
+This sample document demonstrates the use of JASA-EL in manuscripts 
+prepared for submission to the Journal of the Acoustical Society of America.  
+See JASA-EL-Docs.pdf, which is part of this package, for extensive
+documentation on using commands for JASA-EL.
+
+You can compare the .tex version of this file with the resulting .pdf
+version to give you an idea of what  commands are available and how
+they work. At the top of the .tex file you'll find a listing of the
+documentclass options, and an explanation of their results.
+Some additional suggestions are included in the body of this
+manuscript.  
+
+  Beginner Latex users should refer to their favorite online
+  documentation. An
+  useful place to start is the primer from the TeX Users Group 
+  \url{https://www.tug.org/twg/mactex/tutorials/ltxprimer-1.0.pdf}
+
+
+EXAMPLE TEXT: 
+This is example text. This is example text. This is example text. This
+is example text. This is example text. This is example text. This is
+example text. This is example text. This is example text. This is
+example text. This is example text. This is example text. This is
+example text. This is example text. This is example text. This is
+example text.
+\begin{equation}
+\Delta = \frac{f_H - f_L}{\frac{1}{2}(f_L + f_H)} \geq 0.1,
+\end{equation}
+This is example text. This is example text. This is example text. This
+is example text. This is example text. This is example text. This is
+example text. This is example text. This is example text. This is
+example text. This is example text. This is example text. This is
+example text. This is example text. This is example text. This is
+example text.
+
+The paper is organized as follows: Section~\ref{sec:2} presents
+initial information, while
+Section~\ref{sec:3} presents examples of mathematical expressions.
+
+ % Sample showing how to include figure, this is a floating figure
+ 
+\begin{figure}[ht]
+%% \reprintcolumnwidth is the same in preprint and reprint for
+%% ease of use for authors:
+\includegraphics[width=\reprintcolumnwidth]{figsamp}
+\caption{\label{fig:FIG1}{Caption here.}}
+
+\raggedright
+Note: The only figure formats allowed are the following: 
+.pdf, .ps, .eps, .jpg or .pdf. Figure files must be named in this fashion:
+Figure\#.xxx, where ``\#'' is the figure number and ``xxx'' is the file format
+(Figure1.pdf, Figure2.jpg, Figure3a.ps, Figure3b.ps, etc). 
+
+[For these sample pages we have used only the figsamp file for
+illustrations, for convenience]
+\end{figure}
+
+\section{\label{sec:2} Section Two}
+
+An example of another first-level Section with following example text that refers to subsections using 
+\verb+\ref{subsec:XXX}+ ...  EXAMPLE: Some background in
+section~\ref{sec:2} and details  in subsection~\ref{subsec:2:1}. 
+
+\subsection{\label{subsec:2:1} Sample subsection}
+Here is a figure reference: is shown in Fig.~\ref{fig:FIG1}.
+
+\section{Inline and display math samples\label{sec:3}}
+
+\subsection{\label{subsec:3:3} Math and equations $\alpha\beta\Delta\Gamma$}
+Inline math may be typeset using the \verb+$+ delimiters. Bold math
+symbols may be achieved using the \verb+bm+ package and the
+\verb+\bm{#1}+ command it supplies. For instance, a bold $\alpha$ can
+be typeset as \verb+$\bm{\alpha}$+ giving $\bm{\alpha}$. Fraktur and
+Blackboard (or open face or double struck) characters should be
+typeset using the \verb+\mathfrak{#1}+ and \verb+\mathbb{#1}+ commands
+respectively. Both are supplied by the \texttt{amssymb} package which
+is included in JASA-EL. For
+example, \verb+$\mathbb{R}$+ gives $\mathbb{R}$ and
+\verb+$\mathfrak{G}$+ gives $\mathfrak{G}$.
+
+In \LaTeX\ there are many different ways to display equations; a
+few preferred ways are noted below. Displayed math will center by
+default. 
+
+Below we have numbered single-line equations; this is the most common
+type of equation.
+\begin{eqnarray}
+\chi_+(p){\bf [}2|{\bf p}|(|{\bf p}|+p_z){\bf ]}^{-1/2}
+\left(
+\begin{array}{c}
+|{\bf p}|+p_z\\
+px+ip_y
+\end{array}\right)\;,
+\\
+\left\{%
+ 1234567890abc123\alpha\beta\gamma\delta1234556\alpha\beta
+ \frac{1\sum^{a}_{b}}{A^2}%
+\right\}%
+\label{eq:one}.
+\end{eqnarray}
+Note the open one in Eq.~(\ref{eq:one}).
+
+The equation number will move down automatically if it cannot fit
+on the same line with a one-line equation.
+
+When the \verb+\label{#1}+ command is used [ie. input for
+Eq.~(\ref{eq:one})], the equation can be referred to in text without
+knowing the equation number that \TeX\ will assign to it. Just
+use \verb+\ref{#1}+, where \verb+#1+ is the same name that used in
+the \verb+\label{#1}+ command.
+
+Unnumbered single-line equations can be typeset
+using the \verb+\[+, \verb+\]+ format:
+\[g^+g^+ \rightarrow g^+g^+g^+g^+ \dots ~,~~q^+q^+\rightarrow
+q^+g^+g^+ \dots ~. \]
+
+
+Note the equations can be lettered with the
+subequations environment:
+\begin{subequations}
+\begin{eqnarray}
+A&=&mc, \label{eqa}
+\\
+B&=&mc^2, \label{eqb}
+\\
+C&\agt& mc^3. \label{eqc}
+\end{eqnarray}
+\end{subequations}
+Referenced: Eqs.~(\ref{eqa}), (\ref{eqb}), and (\ref{eqc}).
+
+
+\section{Floats, Figures and Tables}
+
+ Figures and tables are typically ``floats'' which means that their
+final position is determined by \LaTeX\ while the document is being
+typeset.
+
+\subsection{\label{subsec:3:2} Tables}
+Tables generally should be surrounded with
+\verb+\begin{ruledtabular}...\end{ruledtabular}+\\
+This will guarantee that they are the width of the
+page or column, and have two ruled lines at the top
+and bottom of the table.
+
+\verb+[ht]+ in the code below instructs \LaTeX\ to place the table
+where it appears in type, if it will fit on the page;
+otherwise put it on the top of the next page.
+
+Footnotes in a table are labeled a, b, c,
+ etc.  They can
+be  specified  by  using  the  \LaTeX\
+\verb+\footnotemark[]+
+and
+\verb+\footnotetext[]+ commands.
+The  footnotes  for  a  table  are  typeset  at  the
+bottom  of  the  table,  rather  than  at  the  bottom  of  the
+page or at the end of the references.  The arguments for
+\verb+\footnotemark[]+
+and
+\verb+\footnotetext[]+
+should be numbers
+1, 2, \ldots\  The journal style will convert these to letters.
+This system allows
+multiple entries to refer to the same
+footnote.   
+
+\begin{table}[ht]
+\caption{\label{tab:table1}A table with more columns still fits
+properly in a column. Note that several entries share the same
+footnote. Inspect the \LaTeX\ input for this table to see
+exactly how it is done.}
+
+\begin{ruledtabular}
+\begin{tabular}{cccccccc}
+ &$r_c$ (\AA)\footnotemark[1]&$r_0$ (\AA)&$\kappa r_0$&
+ &$r_c$ (\AA) &$r_0$ (\AA)&$\kappa r_0$\\
+\hline
+Cu& 0.800 & 14.10 & 2.550 &Sn\footnotemark[1]
+& 0.680 & 1.870 & 3.700 \\
+Ag& 0.990 & 15.90 & 2.710 &Pb\footnotemark[2]
+& 0.450 & 1.930 & 3.760 \\
+\end{tabular}
+\end{ruledtabular}
+\footnotetext[1]{Here's the first.}
+\footnotetext[2]{Here's the second.}
+\end{table}
+
+\subsection{Plain Tables: When NOT to use `ruledtabular'}
+There are a number of cases when `ruledtablar' should not
+be used: basically for any table using complex content or 
+commands.
+\newpage
+
+
+
+\begin{table}[ht]
+\caption{A table made without `ruledtabular' needs to have two hlines
+added to the top and bottom of the table.}
+\vskip3pt
+\begin{tabular}{cccccccc}
+\hline\hline
+ &$r_c$ (\AA)\footnotemark[1]&$r_0$ (\AA)&$\kappa r_0$&
+ &$r_c$ (\AA) &$r_0$ (\AA)&$\kappa r_0$\\
+\hline
+Cu& 0.800 & 14.10 & 2.550 &Sn\footnotemark[1]
+& 0.680 & 1.870 & 3.700 \\
+Ag& 0.990 & 15.90 & 2.710 &Pb\footnotemark[2]
+& 0.450 & 1.930 & 3.760 \\
+Au& 1.150 & 15.90 & 2.710 &Ca\footnotemark[3]
+& 0.750 & 2.170 & 3.560\\
+\hline\hline
+\end{tabular}
+\footnotetext[1]{This is the first table note.}
+\footnotetext[2]{This is the second table note.}
+\footnotetext[3]{This is the third table note.}
+\end{table}
+
+When you'd like to use the multicolumn command in your
+table, you'll find that `ruledtabular' will cause bad
+formatting. In that case, Don't Use Ruledtabular, and
+instead put in \verb+\hline\hline+ at the top and bottom of
+the table, as you see in the example table above.
+
+\subsection{Using dcolumn}
+\verb+\usepackage{dcolumn}+ is included in JASA-EL.cls so you
+don't need to add it.
+\href{http://anorien.csc.warwick.ac.uk/mirrors/CTAN/macros/latex/required/tools\\
+/dcolumn.pdf}
+{\url{http://anorien.csc.warwick.ac.uk/mirrors/CTAN/macros/latex/required/tools/dcolumn.pdf}}
+will give you detailed information.
+A gentler introduction may be found in this informative and well
+illustrated
+article: \href{https://www.tug.org/pracjourn/2007-1/mori/mori.pdf}
+{\url{https://www.tug.org/pracjourn/2007-1/mori/mori.pdf}}, starting on page
+20. (You may want to look at more examples in this quite comprehensive
+article on making tables in \LaTeX.)
+
+\begin{quote}
+``If we do not want to break the fractional and the integral part in two columns,
+the dcolumn package provides a new type of column\\
+\verb+D{sep -in}{sep -out}{ before.after}+\\
+The first argument \verb+{sep-in}+ is the symbol used in the
+.tex document to separate
+the integral and the fractional part (usually the decimal point . or the decimal
+comma ,), the second argument \verb+{sep-out}+
+is the symbol that we want in the
+output, the third is the number of digits on the left (before) and on the right
+(after) this symbol. The numbers are aligned to the decimal point and, in case
+that the third argument is negative, the decimal point is aligned to the center of
+the column. If the columns have a heading, it must be inserted into
+the command \verb+\multicolumn{1}{c}{...}+
+\end{quote}
+\newpage
+An example using dcolumn:
+\begin{verbatim}
+{\hsize= 2in
+\begin{ruledtabular}
+\begin{tabular}{cD {,}{.}{5.4}}
+Expression           & \multicolumn {1}{c}{ Value }\\
+\hline
+$\pi$                  &      3,1416                 \\
+$\pi^{\pi}$           &     36,46                    \\
+$\pi^{\pi^{\pi}}$    & 80662,7                      \\
+\end{tabular}
+\end{ruledtabular}
+}
+\end{verbatim}
+\vskip12pt
+{\hsize= 2in
+\begin{ruledtabular}
+\begin{tabular}{cD {,}{.}{5.4}}
+Expression           & \multicolumn {1}{c}{ Value }\\
+\hline
+$\pi$                  &      3,1416                 \\
+$\pi^{\pi}$           &     36,46                    \\
+$\pi^{\pi^{\pi}}$    & 80662,7                      \\
+\end{tabular}
+\end{ruledtabular}
+}
+
+
+
+\clearpage
+
+
+
+\subsection{Sample Figures, new commands available in this style}
+\vskip12pt
+{\bf Note that the publisher determines the final layout, so 
+your choice of figure alignment may not be reflected in the published
+article.}
+\vskip24pt
+\noindent
+\verb+\figline{}+ will center one or more figures on one line. 
+
+
+\noindent
+\verb+\fig{<name of file>}{<width>}{<letter to put underneath>}+
+
+\noindent
+\verb+\leftfig{<name of file>}{<width>}{<letter to put underneath>}+
+
+\noindent
+\verb+\rightfig{<name of file>}{<width>}{<letter to put underneath>}+
+
+\noindent
+\verb+\boxedfig{<name of file>}{<width>}{<letter to put underneath>}+
+
+\noindent
+\verb+\rotatefig{<degrees of rotation>}{<name of file>}{<width>}+\\
+\verb+{<letter to put underneath>}+
+
+The following illustrations show these commands in use.
+
+\begin{figure*}[ht]
+\begin{verbatim}
+\figline{\fig{figsamp}{4cm}{(a)}
+\fig{figsamp}{4cm}{(b)}}
+\figline{\fig{figsamp}{4cm}{(c)}
+\fig{figsamp}{4cm}{(d)}}
+\figline{\fig{figsamp}{4cm}{(e)}}
+\end{verbatim}
+
+\figline{\fig{figsamp}{4cm}{(a)}
+\fig{figsamp}{4cm}{(b)}}
+\figline{\fig{figsamp}{4cm}{(c)}
+\fig{figsamp}{4cm}{(d)}}
+\figline{\fig{figsamp}{4cm}{(e)}}
+
+\caption{ \label{fig:pressure_field} Multiple images on one figure
+example (a) image 1, (b-f).}
+\end{figure*}
+
+\begin{figure*}
+\baselineskip=12pt
+\begin{verbatim}
+\figline{\boxedfig{figsamp}{2in}{(a)}}
+\figline{\leftfig{figsamp}{2in}{(b)}\rightfig{figsamp}{2in}{(c)}}
+\figline{\rotatefig{90}{figsamp}{2in}{(d)}\rotatefig{180}{figsamp}{2in}{(e)}}
+\end{verbatim}
+
+\figline{\boxedfig{figsamp}{2in}{(a)}}
+
+\figline{\leftfig{figsamp}{2in}{(b)}\rightfig{figsamp}{2in}{(c)}}
+
+\figline{\rotatefig{90}{figsamp}{2in}{(d)}
+\rotatefig{180}{figsamp}{2in}{(e)}
+}
+
+\caption{More figure examples: (a) boxedfig, 
+(b)leftfig; (c)right fig; (d) rotatefig 90 degrees;
+(e) rotatefig 180 degrees. }
+
+\end{figure*}
+
+
+
+
+
+
+
+
+\begin{figure*}
+\baselineskip=12pt
+\begin{verbatim}
+\sidebysidefigures{figsamp}{Describing the first
+illustration.}/{figsamp}{Describing the second illustration.}
+\end{verbatim}
+
+\sidebysidefigures{figsamp}{Describing the first
+illustration.}/{figsamp}{Describing the second illustration.}
+\end{figure*}
+
+
+\begin{figure*}
+\baselineskip=12pt
+\begin{verbatim}
+\figline{
+\fig{figsamp}{.7\textwidth}{}
+\narrowcaption{.2\textwidth}{Here is a narrow caption.}
+}
+\end{verbatim}
+\figline{\fig{figsamp}{.7\textwidth}{} \narrowcaption{.2\textwidth}{Here is a narrow
+caption.}}
+\end{figure*}
+
+
+\begin{figure*}
+\baselineskip=12pt
+\begin{verbatim}
+\figline{\fig{figsamp}{.2\textwidth}{(A)}
+\fig{figsamp}{.2\textwidth}{(B)}
+\fig{figsamp}{.2\textwidth}{(C)}
+\narrowcaption{.25\textwidth}{Caption for three illustrations. 
+The caption may produce many lines, but only one paragraph.
+}}
+\end{verbatim}
+\figline{\fig{figsamp}{.2\textwidth}{(A)}
+\fig{figsamp}{.2\textwidth}{(B)}
+\fig{figsamp}{.2\textwidth}{(C)}
+\narrowcaption{.25\textwidth}{Caption for three illustrations. 
+The caption may produce many lines, but only one paragraph.
+}}
+\end{figure*}
+
+
+
+\begin{figure*}
+\baselineskip=12pt
+\begin{verbatim}
+\figline{\fig{figsamp}{.7\textwidth}{}
+\narrowcaption{.25\textwidth}{Here is a narrow caption that will can be
+positioned to the right of four illustrations.
+You cannot have more than one paragraph of text in a caption.
+You cannot have more than one paragraph of text in a caption.
+You cannot have more than one paragraph of text in a caption.
+You cannot have more than one paragraph of text in a caption.
+}}
+\end{verbatim}
+\figline{\fig{figsamp}{.7\textwidth}{}
+\narrowcaption{.25\textwidth}{Here is a narrow caption that will can be
+positioned to the right of four illustrations.
+You cannot have more than one paragraph of text in a caption.
+You cannot have more than one paragraph of text in a caption.
+You cannot have more than one paragraph of text in a caption.
+You cannot have more than one paragraph of text in a caption.
+}}
+\end{figure*}
+\clearpage
+
+\begin{figure}[h]
+\baselineskip=12pt
+\begin{verbatim}
+\figcolumn{
+\fig{figsamp}{.2\textwidth}{(A)}
+\fig{figsamp}{.2\textwidth}{(B)}
+\fig{figsamp}{.2\textwidth}{(C)}
+}
+\end{verbatim}
+
+\figcolumn{
+\fig{figsamp}{.2\textwidth}{(A)}
+\fig{figsamp}{.2\textwidth}{(B)}
+\fig{figsamp}{.2\textwidth}{(C)}
+}
+
+\caption{Here are some stacking figures.}
+\end{figure}
+
+\subsection{Example of multimedia entry}
+Please note that this is for multimedia intended to appear inline
+within the published article. 
+
+Here is what a multimedia entry will look like:
+\multimedia{http://dx.doi.org/10.1121/1.4947423.1}{Corresponding pulse-compressed echo envelopes
+and video recordings from a fluttering luna moth.
+Echoes from the wings and body of the moth generally dominate the
+acoustic returns, which vary greatly over consecutive ensonifications
+across the wingbeat cycle. File of type ``mp4'' (15.3
+MB)}\label{mmtest1}
+
+Here we try cross referencing the multimedia entry: The multimedia
+above is Mm.~\ref{mmtest1}.
+
+\subsection{Supplementary Material}
+ASA
+prefers that authors to submit related/relevant article files as
+supplementary material with their submission.
+
+\subsection{Supplementary material for publication}
+Any archival supplemental materials to be published with the
+manuscript (eg., supplementary figures) should be cited in-text and a footnote provided.
+
+An example of reference to supplementary material:
+
+The sound files and videos for this and other figures
+are included as supplementary materials\footnote{See
+Supplementary materials at [URL will be inserted by AIP]
+for [give a brief description of the material].}.
+
+The contents of the footnote above will appear at the beginning of the
+bibliography made with BibTeX when the default `author-year' documentclass option is used;
+BibTeX output will have the footnote interleaved with other
+references if the NumberedRefs documentclass option is used.
+
+\subsection{File naming conventions}
+Here are the conventions for naming files:
+
+\begin{itemize}
+\item
+Supplementary Figure or
+	Supplementary Figure or Text files should be named: SuppPub\#.xxx, where ``\#'' is
+	a number and ``xxx" is the file format extension
+	(SuppPub1.docx, SuppPub2.jpg, etc)
+
+\item
+	Supplementary Multimedia files: SuppPubmm\#.xxx, where ``\#'' is a
+	number and ``xxx'' is the file format extension (SuppPubmm1.mp3,
+	SuppPubmm2.gif, etc)
+
+\item
+Multimedia files must be named accordingly: MM\#.xxx, where ``\#'' is the
+number and ``xxx'' is the file format extension (MM1.wav, MM2.avi, etc).
+
+\item
+The only figure formats allowed are the following: 
+.pdf, .ps, .eps, or .jpg. Figure files must be named in this fashion:
+Figure\#.xxx, where ``\#'' is the figure number and ``xxx'' is the file format
+(Figure1.pdf, Figure2.jpg, Figure3a.ps, Figure3b.ps, etc). 
+
+\end{itemize}
+
+
+
+
+
+
+
+\section{Footnotes}
+The contents of the footnotes will appear at the beginning of the
+bibliography when BibTeX produces the .bbl file using the default
+AuthorYear style; interleaved with other references if 
+Numbered\-Refs option is used:
+\verb+\documentclass[NumberedRefs]{JASA-EL}+\\
+and BibTeX has been used.
+
+This example show where this cite \citep{booksamp1} will appear in the
+bibliography,
+depending on whether we use default author-year style
+or call for the NumberedRefs documentclass option.
+
+Here are some sample footnotes:\footnote{Here is the second footnote.
+It will appear before the beginning of the bibliography in Author-Year
+style (default) or it will be 
+ interleaved with other references when using the Numbered\-Refs
+ option.}$^,$% (comma between two sequential footnotes)
+\footnote{Here is a third footnote.}
+
+
+\section{Making the Bibliography Using BibTeX}
+Authors are highly  recommended to use BibTeX to produce their
+bibliographies. The results will be predictable and even if
+it might take some time to get comfortable with  using BibTeX,
+in the long run it will save you endless aggravation.
+
+A resource for making your bibliography entries
+correctly is included in this package: 
+JASA-ReferenceStyles.pdf. You will also find
+the files
+bibsamp1.tex/.pdf and bibsamp2.tex/.pdf
+for examples of output; and sampbib.bib for an example of
+how to make your .bib database entries.
+
+There are two possible bibliography styles: the default, author-year,
+and the optional style, Numbered\-Refs, which you would call using\\
+{\verb+\documentclass[NumberedRefs]{JASA-EL}+ }
+
+Every \verb+\cite+ will produce a citation and an entry in the
+bibliography and every cite must have a matching entry in the bib
+database file.
+
+\verb+\citep{}+ should be used rather than \verb+\cite{}+
+Note that the citations are hyperlinked to their entries in the
+bibliography:
+
+Normal journal cite: \citep{joursamp1},
+ Book reference \citep{booksamp1},
+In press, \citep{inpress3}. 
+Computer language documentation:
+\citep{sampcode2}.
+
+
+\begin{quote}
+\it
+NOTE:\\
+Once you have used BibTeX you
+should open the resulting .bbl file and cut and paste the entire contents 
+into the end of your article. You should also comment out
+\verb+\bibliography{<your .bib file>}+, ie,
+\verb+%\bibliography{<your .bib file>}+.
+\end{quote}
+
+Make your bibliography by doing: pdflatex filename,  bibtex filename,
+pdflatex filename, pdflatex filename.
+
+{\bfseries\itshape
+Compare the results you get with\\
+{\verb+\documentclass{JASA-EL}+ }\\
+vs.\\
+{\verb+\documentclass[NumberedRefs]{JASA-EL}+ }
+}
+
+\section{\label{sec:5}Conclusion}
+
+And in conclusion\ldots
+
+%% If only one acknowledgment, 
+%% \begin{acknowledgment}...\end{acknowledgment}
+%% may be used.
+\begin{acknowledgments}
+This research was supported by  ...
+\end{acknowledgments}
+
+\bibliography{sampbib}
+
+
+
+
+\end{document}
+
+
+
+
+

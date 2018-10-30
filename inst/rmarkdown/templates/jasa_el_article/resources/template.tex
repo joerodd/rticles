@@ -1,0 +1,188 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	JASA-EL LaTeX Sample File
+%
+%  Beginner Latex users should refer to their favorite online documentation
+%  here is one from the TeX Users Group
+%	https://www.tug.org/twg/mactex/tutorials/ltxprimer-1.0.pdf
+%
+%  Useful FAQ from  https://journals.aps.org/revtex/revtex-faq
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%% JASA-EL without options %%%%%%%%%%%%%%%%%%%%%%%
+%% For manuscript, 12pt, one column style, line numbers default
+
+\documentclass{JASA-EL}
+
+
+\usepackage{fontenc}
+\usepackage{fontspec}
+\setmainfont{CMU Serif}
+
+\def\tightlist{}
+
+%%%%% JASA-EL Options %%%%%
+%%
+%% Remember only one documentclass command may  be used, so
+%% if you use one of these document class commands with options,
+%% remember to comment out the other instances of \documentclass
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% For alternate affiliation, use \altaffilition{}:
+%% \altaffiliation{Also at: Another University, City, State, Zipcode, Country}
+%% If appropriate, enter this command immediately after the \affiliation{} command.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% The default option produces all authors, all affiliations,
+%% then all email addresses, ie,
+
+%%
+% author one, author two, author three, author four, author five
+%%
+% affiliation,  affiliation, affiliation
+%%
+% email for author one, email for author two, email for author three,
+% email for author four, email for author five
+%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Author Affiliation Option
+% \documentclass[authaffil]{JASA-EL}
+
+% authaffil option will produce all email addresses for previously
+% mentioned authors immediately after affiliation; ie,
+
+% author one, author two, author three
+% affiliation
+% email for author one, email for author two, email for author three
+%
+% author four
+% affiliation
+% email
+%
+% author five
+% affiliation
+% email for author five
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Reference Options:
+
+%% Remember to run LaTeX on your file, then BibTeX, then LaTeX in
+%% order to get the correct format.
+
+%% Default is Author-Year style.
+% \documentclass{JASA-EL}
+
+%% NumberedRefs Option
+%% The NumberedRefs option produces numbered bibliography and citations.
+% \documentclass[NumberedRefs]{JASA-EL}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Line numbers, on by default. Here's how to turn them off:
+%% \documentclass[turnofflinenumbers]{JASA-EL}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Track Changes %%
+%% The track changes option allows you to mark changes
+%% and will produce a list of changes, their line number
+%% and page number at the end of the article.
+
+%%  Use this option for Track Changes:
+% \documentclass[trackchanges]{JASA-EL}
+
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+\begin{document}
+
+%% Version in square brackets will appear at top right of all pages except title page:
+$if(running-head)$
+\title[JASA-EL/$running-head$]{$title$}
+$else$
+\title[JASA-EL/$title$]{$title$}
+$endif$
+
+%% Use as many times as you want to:
+
+$for(author)$
+\author{$author.name$}
+$for(author.altaffiliation)$
+\altaffiliation{Also at: $author.altaffiliation$}
+$endfor$
+$if(author.corresponding)$
+\correspondingauthor
+$endif$
+\email{$author.email$}
+$for(author.affiliation)$
+\affiliation{$author.affiliation$}
+$endfor$
+
+$endfor$
+
+%% For example:
+% \author{Author One}
+% \email{author.one@someplace.edu}
+% \author{Author Two}
+% \email{author.two@someplace.edu}
+% \affiliation{Department1,  University1, City, State ZipCode,
+% Country}
+% \altaffiliation{Another University, City, State, Zipcode, Country}
+% \author{Author Three}
+% \email{author.three@someplace.edu}
+
+%% This command must be used for corresponding author:
+
+%%
+
+%% Optional
+$if(date)$
+\date{$date$}
+$endif$
+
+\begin{abstract}
+$abstract$
+\end{abstract}
+
+%% pacs numbers not used
+
+\maketitle
+
+%  End of title page for JASA-EL --------------------------------- %
+
+$body$
+
+%% Before bibliography:
+
+\begin{acknowledgments}
+$acknowledgements$
+\end{acknowledgments}
+
+% -------------------------------------------------------------------------------------------------------------------
+%  No Appendix in JASA-EL
+
+
+%=======================================================
+%IMPORTANT
+
+$if(bibliography)$
+\bibliography{$bibliography$}
+$endif$
+
+% Use \bibliography{<name of your .bib file>}+
+% to make your bibliography with BibTeX.
+
+% Once you have used BibTeX you
+% should open the resulting .bbl file and cut and paste the entire contents
+% into the end of your article.
+
+% You should then comment out \bibliography:
+% \bibliography{<name of your .bib file>}
+
+%=======================================================
+
+\end{document}
+
+

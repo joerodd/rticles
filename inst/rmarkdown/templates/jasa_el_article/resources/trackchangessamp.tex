@@ -1,0 +1,246 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	JASA-EL LaTeX Sample File
+%
+%  Beginner Latex users should refer to their favorite online documentation
+%  here is one from the TeX Users Group 
+%	https://www.tug.org/twg/mactex/tutorials/ltxprimer-1.0.pdf
+%
+%  Useful FAQ from  https://journals.aps.org/revtex/revtex-faq
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Track Changes %%%%%
+%% The track changes option allows you to mark changes
+%% and will produce a list of changes, their line number
+%% and page number at the end of the article.
+
+%% Use this option for Track Changes:
+\documentclass[trackchanges]{JASA-EL}
+
+%%%%%%% JASA-EL without options %%%%%%%%%%%%%%%%%%%%%%%
+%% For manuscript, 12pt, one column style, line numbers default
+
+% \documentclass{JASA-EL}
+
+%%%%% JASA-EL Options %%%%%
+%% 
+%% Remember only one documentclass command may  be used, so
+%% if you use one of these document class commands with options,
+%% remember to comment out the other instances of \documentclass
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% The default option produces all authors, all affiliations,
+%% then all email addresses, ie,
+
+%%
+% author one, author two, author three, author four, author five
+%%
+% affiliation,  affiliation, affiliation
+%%
+% email for author one, email for author two, email for author three,
+% email for author four, email for author five
+%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Author Affiliation Option 
+% \documentclass[authaffil]{JASA-EL}
+
+% authaffil option will produce all email addresses for previously
+% mentioned authors immediately after affiliation; ie,
+
+% author one, author two, author three
+% affiliation
+% email for author one, email for author two, email for author three
+% 
+% author four
+% affiliation
+% email
+% 
+% author five
+% affiliation
+% email for author five
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Reference Options:
+
+%% Default is Author-Year style.
+% \documentclass{JASA-EL}
+
+%% NumberedRefs Option
+%% The NumberedRefs option produces numbered bibliography and citations.
+% \documentclass[NumberedRefs]{JASA-EL}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Line numbers, on by default. Here's how to turn them off:
+%% \documentclass[turnofflinenumbers]{JASA-EL}
+
+\begin{document}
+
+%% Version in square brackets will appear at bottom right of title page:
+\title[JASA-EL/Sample JASA-EL Article]{Sample JASA-EL Article}
+\author{Author One}
+\email{author.one@someplace.edu}
+\author{Author Two}
+\email{author.two@someplace.edu}
+\author{Author Three}
+\email{author.three@someplace.edu}
+\affiliation{Department1,  University1, City, State ZipCode,
+Country}
+\author{Author Four}
+\email{author.four@someplace.edu}
+%% This command must be used for corresponding author:
+\correspondingauthor
+%%
+\affiliation{Department2,  University2, City, State ZipCode, Country}
+\author{Author Five}			
+\email{author.five@someplace.edu}
+\affiliation{Department3,  University3, City, State ZipCode, Country}
+
+\date{\today} 
+
+\begin{abstract}
+Put your abstract here. Abstracts are limited to 100 words for
+JASA-EL
+articles. Please no
+personal pronouns, also please do not use the words ``new'' and/or
+``novel'' in the abstract. An article usually includes an abstract, a
+concise summary of the work covered at length in the main body of the
+article.     
+\end{abstract}
+
+%% pacs numbers not used
+
+\maketitle
+
+%  End of title page for Preprint option --------------------------------- %
+
+\section{\label{sec:1} Introduction section}
+This sample document demonstrates the use of JASA-EL in manuscripts 
+prepared for submission to the Journal of the Acoustical Society of America.  
+See JASA-EL-Docs.pdf, which is part of this package, for extensive
+documentation on using commands for JASA-EL.
+
+You can compare the .tex version of this file with the resulting .pdf
+version to give you an idea of what  commands are available and how
+they work. At the top of the .tex file you'll find a listing of the
+documentclass options, and an explanation of their results.
+Some additional suggestions are included in the body of this
+manuscript.  
+
+  Beginner Latex users should refer to their favorite online
+  documentation. An
+  useful place to start is the primer from the TeX Users Group 
+  \url{https://www.tug.org/twg/mactex/tutorials/ltxprimer-1.0.pdf}
+
+
+\clearpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Track Changes:
+% To add words, \added{<word added>}
+% To delete words, \deleted{<word deleted>}
+% To replace words, \replace{<word to be replaced>}{<replacement word>}
+% To explain why change was made: \explain{<explanation>}
+
+% At the end of the document, use \listofchanges, which will list the
+% changes and the page and line number where the change was made.
+
+% When final version, \listofchanges will not produce anything,
+% \added{} word will be printed, \deleted{} will take away the word,
+% \replaced{}{} will print only the 2nd argument.
+% \explain will not print anything.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Track changes does not work unless `trackchanges' is used as an optional argument:
+%% \documentclass[trackchanges]{JASA-EL}
+
+\section{Track Changes}
+ASA prefers that the Track Changes commands only be used to
+track revisions.
+
+\subsection{Using track changes commands}
+Track changes commands will work only when the option
+\verb+\trackchanges+ is used:\\
+\verb+\documentclass[trackchanges]{JASA-EL}+.
+
+\subsection{Available track changes commands}
+
+To add words, \verb+\added{<word added>}+
+
+To delete words, \verb+\deleted{<word deleted>}+
+
+To replace words, \verb+\replace{<word to be replaced>}{<replacement word>}+
+
+To explain why change was made: \verb+\explain{<explanation>}+
+
+
+\subsection{Available option for track changes commands}
+
+Comments can be used for additional information to the author, perhaps
+a date, or the editor's initials, or more text.
+\vskip12pt
+To add comment when adding words, \verb+\added[comment]{<word added>}+
+
+To delete words, \verb+\deleted[comment]{<word deleted>}+
+
+To replace words, \verb+\replace[comment]{<word to be replaced>}{<replacement word>}+
+
+To explain why change was made: \verb+\explain[comment]{<explanation>}+
+
+
+\subsection{End of document, `list of changes'}
+
+At the end of the document, use \verb+\listofchanges+ is called by
+\verb+\end{document}+. It will list the
+changes and the page and line number where the change was made.
+
+When final version, \verb+\listofchanges+ will not produce anything,
+\verb+\added{}+ word will be printed, \verb+\deleted{}+ will take away the word,
+\verb+\replaced{}{}+ will print only the 2nd argument.
+\verb+\explain{}+ will not print anything.
+
+%% only use these samples if the `trackchanges' option has been used:
+
+\subsection{Samples of track changes}
+
+This shows `added': \added{This was added to the text}
+
+%%
+%% Use \explain{} before change, so that it ends up on the right line.
+\explain{Redundant sentence, better without it. Do you mind?\\ --~JC}
+
+Here is an example of deleted in the body  of a paragraph.\deleted{This was deleted from the text}
+
+We replaced \replaced{XYZ}{ZYX}
+
+At the end of the document, use \verb+\listofchanges+ is called by
+\verb+\end{document}+. It will list the
+changes and the page and line number where the change was made.
+
+If `trackchanges' is not an option, \verb+\listofchanges+ will
+not produce anything. \verb+\added{xyz}+ will put `xyz' in the
+text; \verb+\delete{zzz}+ will produce nothing; and 
+\verb+\replace{abc}{def}+ will leave `def' in your text.
+
+\subsection{Add comment for the change?}
+If you want to add a name to identify who made the change,
+or any other comment, you can use  \verb+[]+ to enter a comment,
+i.e.,\\ \verb+\added[Amy, Feb 2, 2017]+\\
+\verb+{This was added to the text}+.
+
+\added[Amy, Feb 2, 2017]{This was added to the text}
+
+\deleted[Not really necessary]{This was deleted from the text}
+
+We replaced \replaced[(written backwards originally)]{XYZ}{ZYX}
+
+
+
+\end{document}
+
+
+
+

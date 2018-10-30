@@ -1,0 +1,94 @@
+% interactapasample.tex
+% v1.05 - August 2017
+
+\documentclass[]{interact}
+
+\usepackage{fontenc}
+\usepackage{fontspec}
+\setmainfont{CMU Serif}
+
+\usepackage{epstopdf}% To incorporate .eps illustrations using PDFLaTeX, etc.
+\usepackage[caption=false]{subfig}% Support for small, `sub' figures and tables
+
+\usepackage{rotfloat}
+
+\usepackage[nolists,tablesfirst]{endfloat}% To `separate' figures and tables from text if required
+\DeclareDelayedFloatFlavor{sidewaysfigure}{figure}
+\renewcommand{\efloatseparator}{\mbox{}}
+\usepackage[doublespacing]{setspace}% To produce a `double spaced' document if required
+\setlength\parindent{24pt}% To increase paragraph indentation when line spacing is doubled
+
+
+\theoremstyle{plain}% Theorem-like structures provided by amsthm.sty
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\newtheorem{notation}{Notation}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% Pandoc header
+
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={},
+            pdftitle={Article Title},
+            colorlinks=true,
+            urlcolor=black,
+            linkcolor=black,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+
+\begin{document}
+
+\articletype{RESEARCH ARTICLE}% Specify the article type or omit as appropriate
+
+\title{Article Title}
+
+\author{
+  \name{  A.\textasciitilde{}N. Author.\textsuperscript{a}\thanks{CONTACT A. N. Author. Email: latex.helpdesk@tandf.co.uk};   John Smith\textsuperscript{b}}
+  \affil{\textsuperscript{a}Taylor \& Francis, 4 Park Square, Milton Park, Abingdon, UK; \textsuperscript{b}Institut für Informatik, Albert-Ludwigs-Universität, Freiburg, Germany}
+}
+
+\maketitle
+
+\begin{abstract}
+  This template is for authors who are preparing a manuscript for a Taylor
+  \& Francis journal using the \LaTeX~document preparation system and the
+  \texttt{interact} class file, which is available via selected journals'
+  home pages on the Taylor \& Francis website.
+\end{abstract}
+
+  \begin{keywords} Keyword1; Keyword the second\end{keywords}
+
+
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+Body content goes here
+
+\hypertarget{double-spacing}{%
+\subsection{Double spacing}\label{double-spacing}}
+
+\hypertarget{references}{%
+\section*{References}\label{references}}
+\addcontentsline{toc}{section}{References}
+
+
+\end{document}
