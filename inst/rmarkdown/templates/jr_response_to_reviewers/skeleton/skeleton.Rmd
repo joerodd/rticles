@@ -1,0 +1,32 @@
+---
+title: "Revision of *Psychological Review* Submission REV-2018-1046"
+author: "Joe Rodd, Hans Rutger Bosker, Mirjam Ernestus, Antje S. Meyer, Louis ten Bosch"
+date: "11/12/2018"
+bibliography      : ["references.bib"]
+header-includes:
+  - \usepackage{hyperref}
+  - \usepackage{xr-hyper}
+  - \externaldocument[M-]{manuscript}
+  - \usepackage{xcolor}
+output:
+  rticles::jr_response_to_reviewers:
+    keep_tex: yes
+---
+
+```{r setup, echo=F}
+library(xtable)
+library(knitr)
+system2("cp",args=c("/Users/joerod/Google\\ Drive/bibliography/Papers/Bibliography.bib","mybibfile.bib"))
+options(xtable.latex.environments= c("center","ruledtabular"))
+options(xtable.hline.after = c(0))
+
+```
+
+# Introduction
+
+Body content goes here
+
+
+
+
+
