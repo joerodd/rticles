@@ -11,6 +11,9 @@ header-includes:
 output:
   rticles::jr_response_to_reviewers:
     keep_tex: yes
+
+geometry: margin=1in
+classoption: a4paper
 ---
 
 ```{r setup, echo=F}
@@ -24,7 +27,9 @@ options(xtable.hline.after = c(0))
 
 # Introduction
 
-Body content goes here
+> Reviewers comments can be inserted as markdown block quotes.
+
+Body content goes here. Line references to the Manuscript can be made as follows: \lineref{M-psychological-construct}, \lineref{M-psychological-construct-2}. (insert corresponding \linelabels{psychological-construct} into manuscript).
 
 
 
